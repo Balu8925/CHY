@@ -1,20 +1,36 @@
+1.registration
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Greeting App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-    <h2>Simple Greeting App</h2>
-    <input id="nameInput" type="text" placeholder="Enter your name">
-    <button id="greetBtn">Greet</button>
-    <p id="output"></p>
-
-    <script>
-        document.getElementById("greetBtn").addEventListener("click", function() {
-            const name = document.getElementById("nameInput").value;
-            document.getElementById("output").innerText = `Hello, ${name}!`;
-        });
-    </script>
+    <form id="registrationForm"> 
+        <label for="fullName">Full Name:</label><br> 
+        <input type="text" id="fullName" name="fullName" required><br> 
+        <label for="email">Email:</label><br> 
+        <input type="email" id="email" name="email" required><br> 
+        <label for="password">Password:</label><br> 
+        <input type="password" id="password" name="password" required><br> 
+<br> 
+        <input type="submit" value="Register"> 
+</form> 
+ 
+<div id="successMessage" style="display: none;"> 
+    <p>Registration Successful!</p> 
+</div> 
+ 
+<script> document.getElementById("registrationForm").addEventListener("submit", function(event) { 
+    event.preventDefault();
+    document.getElementById("successMessage").style.display = "block";
+    document.getElementById("registrationForm").reset(); 
+}); 
+</script> 
+ 
+</body> 
+</html> 
 </body>
 </html>
